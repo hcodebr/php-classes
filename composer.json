@@ -1,0 +1,21 @@
+{
+    "name": "hcodebr/php-classes",
+    "minimum-stability": "dev",
+    "type": "library",
+    "description": "Classes PHP",
+    "homepage": "https://github.com/hcodebr/php-classes",
+    "authors": [
+        {
+            "name": "Hcode Treinamentos",
+            "email": "suporte@hcode.com.br"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hcode\\": "src/Hcode"
+        }
+    }
+}
