@@ -2,19 +2,23 @@
 
 namespace Hcode\DB;
 
-class Sql extends PDO {
+class Sql {
 
 	const HOSTNAME = "127.0.0.1";
 	const USERNAME = "root";
 	const PASSWORD = "root";
-	const DBNAME = "ecommerce";
+	const DBNAME = "db_ecommerce";
 
 	private $conn;
 
 	public function __construct()
 	{
 
-		$this->conn = parent::__construct("mysql:dbname=".DBNAME.";host=".HOSTNAME, DB::USERNAME, DB::PASSWORD);
+		$this->conn = new \PDO(
+			"mysql:dbname=".Sql::DBNAME.";host=".Sql::HOSTNAME, 
+			Sql::USERNAME,
+			Sql::PASSWORD
+		);
 
 	}
 
@@ -56,7 +60,7 @@ class Sql extends PDO {
 
 		$stmt->execute();
 
-		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
 	}
 
